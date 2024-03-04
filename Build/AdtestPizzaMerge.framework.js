@@ -1994,13 +1994,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  4962080: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 4962141: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 4962205: function() {return Module.webglContextAttributes.powerPreference;},  
- 4962263: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 4962318: function($0) {performance.now = function() { return $0; };},  
+  4962128: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 4962189: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 4962253: function() {return Module.webglContextAttributes.powerPreference;},  
+ 4962311: function() {Module['emscripten_get_now_backup'] = performance.now;},  
  4962366: function($0) {performance.now = function() { return $0; };},  
- 4962414: function() {performance.now = Module['emscripten_get_now_backup'];}
+ 4962414: function($0) {performance.now = function() { return $0; };},  
+ 4962462: function() {performance.now = Module['emscripten_get_now_backup'];}
 };
 
 
