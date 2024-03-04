@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <!--Jio sdk for pizza merge game -->
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Pizza Merge</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="jiogames_sp_wrapper.js"></script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -17,6 +15,12 @@
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Pizza Merge</div>
       </div>
     </div>
     <script>
@@ -96,7 +100,6 @@
 
       loadingBar.style.display = "block";
 
-      var unityGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -104,7 +107,9 @@
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
-                unityGameInstance = unityInstance;
+                fullscreenButton.onclick = () => {
+                  unityInstance.SetFullscreen(1);
+                };
               }).catch((message) => {
                 alert(message);
               });
