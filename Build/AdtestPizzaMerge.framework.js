@@ -10328,11 +10328,11 @@ var ASM_CONSTS = {
       console.log("Checking Ad is ready from wrapper ");
       if (isRVReady) 
       {
-          unityGameInstance.SendMessage('Jio', 'CheckAdAvailable',true);
+          unityGameInstance.SendMessage('Jio', 'CheckAdAvailable',1);
       } 
       else
       {
-          unityGameInstance.SendMessage('Jio', 'CheckAdAvailable',false);
+          unityGameInstance.SendMessage('Jio', 'CheckAdAvailable',0);
       } 
         console.log("Ad check called form jioplugin");
     }
