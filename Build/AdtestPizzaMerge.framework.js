@@ -10307,7 +10307,7 @@ var ASM_CONSTS = {
     }
 
   function _chechAdstatus(){
-      console.log("Checking Ad is ready from wrapper ");
+      //console.log("Checking Ad is ready from js lib ");
       if (isRVReady) 
       {
           unityGameInstance.SendMessage('Jio', 'CheckAdAvailable',1);
@@ -10316,7 +10316,7 @@ var ASM_CONSTS = {
       {
           unityGameInstance.SendMessage('Jio', 'CheckAdAvailable',0);
       } 
-        console.log("Ad check called form jioplugin");
+        //console.log("Ad check called form jioplugin");
     }
 
   var readAsmConstArgsArray = [];
