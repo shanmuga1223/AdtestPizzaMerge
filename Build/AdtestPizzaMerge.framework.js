@@ -1994,13 +1994,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  4962000: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 4962061: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 4962125: function() {return Module.webglContextAttributes.powerPreference;},  
- 4962183: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 4962238: function($0) {performance.now = function() { return $0; };},  
+  4962048: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 4962109: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 4962173: function() {return Module.webglContextAttributes.powerPreference;},  
+ 4962231: function() {Module['emscripten_get_now_backup'] = performance.now;},  
  4962286: function($0) {performance.now = function() { return $0; };},  
- 4962334: function() {performance.now = Module['emscripten_get_now_backup'];}
+ 4962334: function($0) {performance.now = function() { return $0; };},  
+ 4962382: function() {performance.now = Module['emscripten_get_now_backup'];}
 };
 
 
@@ -2146,6 +2146,11 @@ var ASM_CONSTS = {
       var js = jsStackTrace();
       if (Module['extraStackTrace']) js += '\n' + Module['extraStackTrace']();
       return demangleAll(js);
+    }
+
+  function _ChechAdstatus(){
+        CheckRWAdReady();
+        console.log("Ad check called form jioplugin");
     }
 
   function _GetJSMemoryInfo(totalJSptr, usedJSptr) {
@@ -16516,6 +16521,7 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
 }
 var asmLibraryArg = {
+  "ChechAdstatus": _ChechAdstatus,
   "GetJSMemoryInfo": _GetJSMemoryInfo,
   "JS_Accelerometer_IsRunning": _JS_Accelerometer_IsRunning,
   "JS_Accelerometer_Start": _JS_Accelerometer_Start,
