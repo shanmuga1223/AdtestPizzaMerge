@@ -10306,24 +10306,6 @@ var ASM_CONSTS = {
       abort('native code called abort()');
     }
 
-  function _cacheAd() {
-      if (!isAdReady) {
-         // console.log ("Ad is NOT ready hence calling Interstitial to CACHE..");
-          cacheAdMidRoll("dnhtziu9", "com.pixcellplay.pizzamergeSP");
-      } else {
-          //console.log ("Ad is ready hence ignoring Interstitial to CACHE..");      
-      }
-    }
-
-  function _cacheAdRewarded() {
-      if (!isRVReady) {
-         // console.log ("Ad is NOT ready hence calling RV to CACHE..");
-          cacheAdRewardedVideo("nmxhj0bu", "com.pixcellplay.pizzamergeSP");
-      } else {
-         // console.log ("Ad is ready hence ignoring RV to CACHE..");
-      } 
-    }
-
   function _chechAdstatus(){
       console.log("Checking Ad is ready from wrapper ");
       if (isRVReady) 
@@ -16702,8 +16684,6 @@ var asmLibraryArg = {
   "_munmap_js": __munmap_js,
   "_tzset_js": __tzset_js,
   "abort": _abort,
-  "cacheAd": _cacheAd,
-  "cacheAdRewarded": _cacheAdRewarded,
   "chechAdstatus": _chechAdstatus,
   "emscripten_asm_const_int": _emscripten_asm_const_int,
   "emscripten_asm_const_int_sync_on_main_thread": _emscripten_asm_const_int_sync_on_main_thread,
