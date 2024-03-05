@@ -1994,13 +1994,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  4962016: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 4962077: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 4962141: function() {return Module.webglContextAttributes.powerPreference;},  
- 4962199: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 4962254: function($0) {performance.now = function() { return $0; };},  
- 4962302: function($0) {performance.now = function() { return $0; };},  
- 4962350: function() {performance.now = Module['emscripten_get_now_backup'];}
+  4961984: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 4962045: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 4962109: function() {return Module.webglContextAttributes.powerPreference;},  
+ 4962167: function() {Module['emscripten_get_now_backup'] = performance.now;},  
+ 4962222: function($0) {performance.now = function() { return $0; };},  
+ 4962270: function($0) {performance.now = function() { return $0; };},  
+ 4962318: function() {performance.now = Module['emscripten_get_now_backup'];}
 };
 
 
@@ -10306,15 +10306,6 @@ var ASM_CONSTS = {
       abort('native code called abort()');
     }
 
-  function _cacheAdRewarded() {
-      if (!isRVReady) {
-         // console.log ("Ad is NOT ready hence calling RV to CACHE..");
-          cacheAdRewardedVideo("nmxhj0bu", "com.pixcellplay.pizzamergeSP");
-      } else {
-         // console.log ("Ad is ready hence ignoring RV to CACHE..");
-      } 
-    }
-
   function _chechAdstatus(){
       console.log("Checking Ad is ready from wrapper ");
       if (isRVReady) 
@@ -16693,7 +16684,6 @@ var asmLibraryArg = {
   "_munmap_js": __munmap_js,
   "_tzset_js": __tzset_js,
   "abort": _abort,
-  "cacheAdRewarded": _cacheAdRewarded,
   "chechAdstatus": _chechAdstatus,
   "emscripten_asm_const_int": _emscripten_asm_const_int,
   "emscripten_asm_const_int_sync_on_main_thread": _emscripten_asm_const_int_sync_on_main_thread,
