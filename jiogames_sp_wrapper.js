@@ -116,19 +116,6 @@ function getUserProfile() {
     }
 }
 
-// checking is ad is ready
-function checkRWAdReady() {
-    console.log("Checking Ad is ready from wrapper ");
-    if (isRVReady) 
-    {
-        unityGameInstance.SendMessage('Jio', 'CheckAdAvailable',true);
-    } 
-    else
-    {
-        unityGameInstance.SendMessage('Jio', 'CheckAdAvailable',false);
-    } 
-}
-
 window.onAdReady = function (adSpotKey) {
      console.log("JioGames: onAdReady "+adSpotKey.toString());
      adSpotKey == adSpotInterstitial && (isAdReady = true, console.log("JioGames: onAdReady MidRoll " + isAdReady));
