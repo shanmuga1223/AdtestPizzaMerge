@@ -1994,13 +1994,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  4962032: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 4962093: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 4962157: function() {return Module.webglContextAttributes.powerPreference;},  
- 4962215: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 4962270: function($0) {performance.now = function() { return $0; };},  
- 4962318: function($0) {performance.now = function() { return $0; };},  
- 4962366: function() {performance.now = Module['emscripten_get_now_backup'];}
+  4962064: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 4962125: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 4962189: function() {return Module.webglContextAttributes.powerPreference;},  
+ 4962247: function() {Module['emscripten_get_now_backup'] = performance.now;},  
+ 4962302: function($0) {performance.now = function() { return $0; };},  
+ 4962350: function($0) {performance.now = function() { return $0; };},  
+ 4962398: function() {performance.now = Module['emscripten_get_now_backup'];}
 };
 
 
@@ -10306,6 +10306,24 @@ var ASM_CONSTS = {
       abort('native code called abort()');
     }
 
+  function _cacheAd() {
+      if (!isAdReady) {
+         // console.log ("Ad is NOT ready hence calling Interstitial to CACHE..");
+          cacheAdMidRoll("dnhtziu9", "com.pixcellplay.pizzamergeSP");
+      } else {
+          //console.log ("Ad is ready hence ignoring Interstitial to CACHE..");      
+      }
+    }
+
+  function _cacheAdRewarded() {
+      if (!isRVReady) {
+         // console.log ("Ad is NOT ready hence calling RV to CACHE..");
+          cacheAdRewardedVideo("nmxhj0bu", "com.pixcellplay.pizzamergeSP");
+      } else {
+         // console.log ("Ad is ready hence ignoring RV to CACHE..");
+      } 
+    }
+
   function _chechAdstatus(){
       //console.log("Checking Ad is ready from js lib ");
       if (isRVReady) 
@@ -16684,6 +16702,8 @@ var asmLibraryArg = {
   "_munmap_js": __munmap_js,
   "_tzset_js": __tzset_js,
   "abort": _abort,
+  "cacheAd": _cacheAd,
+  "cacheAdRewarded": _cacheAdRewarded,
   "chechAdstatus": _chechAdstatus,
   "emscripten_asm_const_int": _emscripten_asm_const_int,
   "emscripten_asm_const_int_sync_on_main_thread": _emscripten_asm_const_int_sync_on_main_thread,
