@@ -2148,11 +2148,6 @@ var ASM_CONSTS = {
       return demangleAll(js);
     }
 
-  function _ChechAdstatus(){
-        CheckRWAdReady();
-        console.log("Ad check called form jioplugin");
-    }
-
   function _GetJSMemoryInfo(totalJSptr, usedJSptr) {
       if (performance.memory) {
         HEAPF64[totalJSptr >> 3] = performance.memory.totalJSHeapSize;
@@ -10329,6 +10324,11 @@ var ASM_CONSTS = {
       } 
     }
 
+  function _chechAdstatus(){
+        window.DroidHandler.checkRWAdReady();
+        console.log("Ad check called form jioplugin");
+    }
+
   var readAsmConstArgsArray = [];
   function readAsmConstArgs(sigPtr, buf) {
       ;
@@ -16521,7 +16521,6 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
 }
 var asmLibraryArg = {
-  "ChechAdstatus": _ChechAdstatus,
   "GetJSMemoryInfo": _GetJSMemoryInfo,
   "JS_Accelerometer_IsRunning": _JS_Accelerometer_IsRunning,
   "JS_Accelerometer_Start": _JS_Accelerometer_Start,
@@ -16697,6 +16696,7 @@ var asmLibraryArg = {
   "abort": _abort,
   "cacheAd": _cacheAd,
   "cacheAdRewarded": _cacheAdRewarded,
+  "chechAdstatus": _chechAdstatus,
   "emscripten_asm_const_int": _emscripten_asm_const_int,
   "emscripten_asm_const_int_sync_on_main_thread": _emscripten_asm_const_int_sync_on_main_thread,
   "emscripten_cancel_main_loop": _emscripten_cancel_main_loop,
