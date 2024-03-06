@@ -294,10 +294,10 @@ function showAdRewarded() {
 // Callback received whenever the Jio app is sent to background or brought to foreground
 document.addEventListener("visibilitychange", function() {
      if (document.visibilityState === 'visible') {
-        console.log("JioGames: App Visible");
+        console.logerror("JioGames: App Visible");
         unityGameInstance.SendMessage('Jio', 'ResumeGameSound');
      } else {  
-        console.log("JioGames: App Hidden");
+        console.logerror("JioGames: App Hidden");
         unityGameInstance.SendMessage('Jio', 'PauseGameSound');
      }
 });
