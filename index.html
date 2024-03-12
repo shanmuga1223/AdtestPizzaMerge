@@ -20,8 +20,6 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">Pizza Merge</div>
       </div>
     </div>
@@ -111,9 +109,6 @@
               }).then((unityInstance) => {
                   loadingBar.style.display = "none";
                   unityGameInstance = unityInstance;
-                fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
               }).catch((message) => {
                 alert(message);
               });
