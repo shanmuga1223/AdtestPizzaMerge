@@ -10,7 +10,7 @@ var isRewardUser = false;
 console.log("Jiogames: Initialized SDK in .js!");
 
 function postScore(score) {
-    //console.log("Jiogames: postScore() ",score);
+    console.log("Jiogames: postScore() ",score);
     if(!score){
         console.log("Jiogames: postScore() no value ",score);
     }
@@ -22,7 +22,7 @@ function postScore(score) {
 
 
 function cacheAdMidRoll(adKeyId, source) {
-    /*console.log ("cacheAdMidRoll Called in js");*/
+    console.log ("cacheAdMidRoll Called in js");
     if(!adKeyId || !source){
         adKeyId? null: (console.log("Jiogames: cacheAdMidRoll() no adKeyId to cacheAd ",adKeyId));
         source? null : (console.log("Jiogames: cacheAdMidRoll() no source to cacheAd ",source));
@@ -34,7 +34,7 @@ function cacheAdMidRoll(adKeyId, source) {
 }
 
 function showAdMidRoll(adKeyId, source) {
-    //console.log ("showAdMidRoll Called in js");
+    console.log ("showAdMidRoll Called in js");
     if(!adKeyId || !source){
         adKeyId? null: (console.log("Jiogames: showAdMidRoll() no adKeyId to showAd ",adKeyId));
         source? null : (console.log("Jiogames: showAdMidRoll() no source to showAd ",source));
@@ -46,7 +46,7 @@ function showAdMidRoll(adKeyId, source) {
 }
 
 function cacheAdRewardedVideo(adKeyId, source) {
-    //console.log ("cacheAdRewardedVideo Called in js");    
+    console.log ("cacheAdRewardedVideo Called in js");    
     if (!adKeyId || !source) {
         adKeyId ? null : (console.log("Jiogames: cacheAdRewardedVideo() no adKeyId to cacheAd ", adKeyId));
         source ? null : (console.log("Jiogames: cacheAdRewardedVideo() no source to cacheAd ", source));
@@ -58,7 +58,7 @@ function cacheAdRewardedVideo(adKeyId, source) {
 }
 
 function showAdRewardedVideo(adKeyId, source) {
-    //console.log ("showAdRewardedVideo Called in js");      
+    console.log ("showAdRewardedVideo Called in js");      
     if (!adKeyId || !source) {
         adKeyId ? null : (console.log("Jiogames: showAdRewardedVideo() no adKeyId to showAd ", adKeyId));
         source ? null : (console.log("Jiogames: showAdRewardedVideo() no source to showAd ", source));
@@ -110,20 +110,20 @@ function isSoundEnable() {
 }
 
 function getUserProfile() {
-    //console.log("Jiogames: getUserProfile called");
+    console.log("Jiogames: getUserProfile called");
     if (window.DroidHandler) {
         window.DroidHandler.getUserProfile();
     }
 }
 
 window.onAdReady = function (adSpotKey) {
-     //console.log("JioGames: onAdReady "+adSpotKey.toString());
+     console.log("JioGames: onAdReady "+adSpotKey.toString());
      adSpotKey == adSpotInterstitial && (isAdReady = true, console.log("JioGames: onAdReady MidRoll " + isAdReady));
      adSpotKey == adSpotRewardedVideo && (isRVReady = true, console.log("JioGames: onAdReady RewardedVideo " + isRVReady));   
 };
 
 window.onAdPrepared = function (adSpotKey) {
-    //console.log("JioGames: onAdPrepared "+adSpotKey.toString());
+    console.log("JioGames: onAdPrepared "+adSpotKey.toString());
     adSpotKey == adSpotInterstitial && (isAdReady = true, console.log("JioGames: onAdPrepared MidRoll " + isAdReady));
     adSpotKey == adSpotRewardedVideo && (isRVReady = true, console.log("JioGames: onAdPrepared RewardedVideo " + isRVReady));   
 };
@@ -155,7 +155,7 @@ window.onAdClosed = function (data, pIsVideoCompleted, pIsEligibleForReward) {
     adSpotKey == adSpotRewardedVideo && (isRVReady = false, console.log("JioGames: onAdClose RewardedVideo " + isRVReady));
 
     if (adSpotKey == adSpotRewardedVideo && isVideoCompleted) {
-        //console.log("Rewarded Ad Closed moving to gratification ! ");
+        console.log("Rewarded Ad Closed moving to gratification ! ");
         GratifyReward();
         isRewardUser = isEligibleForReward;
         //Gratify User
